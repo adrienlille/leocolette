@@ -4,7 +4,7 @@ class ApartmentsController < ApplicationController
   end
 
   def show          # GET /apartments/:id
-    @apartment = find_apartment
+    find_apartment
   end
 
   def new           # GET /apartments/new
@@ -12,25 +12,27 @@ class ApartmentsController < ApplicationController
   end
 
   def create        # POST /apartments
-    @restaurant = Restaurant.new(params[:restaurant])
-    @restaurant.save
+    @apartment = Apartment.new(params[:apartment])
+    @apartment.save
   end
 
   def edit          # GET /apartments/:id/edit
-    @apartment = find_apartment
+    find_apartment
   end
 
   def update        # PATCH /apartments/:id
-    @restaurant = find_apartment
-    @restaurant.update(params[:restaurant])
+    find_apartment
+    @apartment.update(params[:apartment])
   end
 
   def destroy       # DELETE /apartments/:id
+    find_restaurant
+    @apartment.destroy
   end
 end
 
 private
 
 def find_apartment
-  Apartment.find(params[:id])
+  @apartment = Apartment.find(params[:id])
 end
