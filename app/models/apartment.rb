@@ -1,4 +1,7 @@
 class Apartment < ApplicationRecord
   belongs_to :user
-  attr_reader :name
+
+  def own?
+    self.user == user
+  end
 end
