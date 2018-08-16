@@ -2,11 +2,9 @@ class BookingsController < ApplicationController
   def create
     authorize @booking = Booking.new(safe_params)
     apartment = Apartment.find(params[:apartment_id])
-    unless chronological?(@booking.start_date, @booking.end_date)
+    if !chronological?(@booking.start_date, @booking.end_date)
       flash[:alert] = "Starting date cannot be posterior to ending date."
-      redirect_to apartment_path(apartment)
-    end
-    if period_available?([@booking.start_date, @booking.end_date], apartment)
+    elsif period_available?([@booking.start_date, @booking.end_date], apartment)
       @booking.apartment_id = apartment.id
       @booking.save!
       flash[:notice] = "Your booking has successfully been requested to the owner."
