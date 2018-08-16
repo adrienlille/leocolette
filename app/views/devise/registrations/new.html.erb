@@ -1,1 +1,13 @@
-LOL
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.label :email%>
+  <%= f.email_field :email %>
+  <%= radio_button_tag(:profile_type, "1") %>
+  <%= label_tag(:profile_type_leo, "Je souhaite voyager") %>
+  <%= radio_button_tag(:profile_type, "2") %>
+  <%= label_tag(:profile_type_colette, "Je souhaite heberger") %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+  <%= f.submit %>
+<% end %>
