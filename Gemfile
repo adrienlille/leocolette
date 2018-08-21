@@ -40,6 +40,7 @@ gem 'simple_form'
 gem 'pry-rails', group: [:development, :test]
 gem 'pry-byebug', group: [:development, :test]
 gem 'pg'
+gem 'dotenv-rails', groups: [:development, :test]
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
