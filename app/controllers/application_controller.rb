@@ -17,12 +17,6 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def check_if_account_type_is_set
-    if user_signed_in?
-      redirect_to setaccount_path if current_user.account_type.nil?
-    end
-  end
-
   private
 
   def skip_pundit?

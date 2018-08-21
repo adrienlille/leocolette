@@ -1,3 +1,8 @@
+ <% if policy(@apartment).create? %>
+  <%= link_to "Mettre mon appartement en ligne", new_apartment_path, :class => "btn btn-primary" %>
+ <%end%>
+
 <% @apartments.each do |apartment| %>
   <%= link_to apartment.name, apartment_path(apartment) %>
 <% end %>
+

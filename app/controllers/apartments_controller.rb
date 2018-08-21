@@ -1,6 +1,7 @@
 class ApartmentsController < ApplicationController
   def index         # GET /apartments
     @apartments = policy_scope(Apartment).order(created_at: :desc)
+    authorize @apartment = Apartment.new
   end
 
   def show          # GET /apartments/:id
