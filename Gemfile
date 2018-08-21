@@ -39,8 +39,17 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'pry-rails', group: [:development, :test]
 gem 'pry-byebug', group: [:development, :test]
-gem 'pg'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
+
+group :production do
+  gem 'pg'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
