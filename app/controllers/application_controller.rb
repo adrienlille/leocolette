@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
-  #before_action :configure_permitted_parameters, if: :devise_controller?
 
   include Pundit
 
@@ -18,9 +17,10 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:account_type, :name, :email, :password)}
-    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :email, :password, :current_password)}
+  def check_if_account_type_is_set
+    if user_signed_in?
+      redirect_to setaccount_path if current_user.account_type.nil?
+    end
   end
 
   private

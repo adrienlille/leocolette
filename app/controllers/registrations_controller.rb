@@ -1,8 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_in_params, only: [:create]
-  def create
-    super
-  end
 
   private
 

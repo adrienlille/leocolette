@@ -37,7 +37,8 @@ gem 'autoprefixer-rails'
 gem 'bootstrap-sass' # Bootstrap v3
 gem 'font-awesome-sass'
 gem 'simple_form'
-
+gem 'pry-rails', group: [:development, :test]
+gem 'pry-byebug', group: [:development, :test]
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

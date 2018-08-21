@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
+  get 'setaccount', to: 'pages#setaccount'
+  post '/setaccount', to: 'pages#saveaccounttype'
 
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :apartments do
