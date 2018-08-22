@@ -13,5 +13,7 @@
   <%= f.number_field :bedrooms %>
   <%= f.label :bathrooms %>
   <%= f.number_field :bathrooms %>
+  <%= f.file_field :photo %>
+  <%= f.hidden_field :photo_cache, as: :hidden %>
   <%= f.submit %>
 <% end %>

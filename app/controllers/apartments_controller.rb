@@ -48,5 +48,5 @@ end
 
 def user_params
   params.require(:apartment).permit(:name, :description, :street, :city, :postal_code,
-    :bedrooms, :bathrooms, )
+    :bedrooms, :bathrooms, :photo)
 end
