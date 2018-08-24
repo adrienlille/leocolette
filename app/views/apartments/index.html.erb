@@ -2,7 +2,12 @@
   <%= link_to "Mettre mon appartement en ligne", new_apartment_path, :class => "btn btn-primary" %>
  <%end%>
 
-<% @apartments.each do |apartment| %>
-  <%= link_to apartment.name, apartment_path(apartment) %>
-<% end %>
-
+<div class="container">
+  <div class="row">
+    <% @apartments.each do |apartment| %>
+      <div class="col-xs-12 col-sm-4">
+        <%= render 'shared/card', apartment: apartment %>
+      </div>
+    <% end %>
+  </div>
+</div>
