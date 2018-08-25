@@ -1,7 +1,8 @@
-<%= form_tag("/setaccount", method: "post") do %>
-  <%= radio_button_tag(:account_type, "1") %>
-  <%= label_tag(:account_type_leo, "Je souhaite voyager") %>
-  <%= radio_button_tag(:account_type, "2") %>
-  <%= label_tag(:account_type_colette, "Je souhaite heberger") %>
-  <%= submit_tag("Ok !") %>
+<%= form_for([@user, @profile]) do |f| %>
+  <%= f.radio_button :account_type, "1" %>
+  <%= f.label :account_type_leo, "Je souhaite voyager" %>
+  <%= f.radio_button :account_type, "2" %>
+  <%= f.label :account_type_leo, "Je souhaite heberger" %>
+  <%= f.submit %>
 <% end %>
+
