@@ -14,6 +14,11 @@ class ProfilesController < ApplicationController
     authorize @profile = current_user.profile
     @profile.attributes = profile_params
     @profile.save!
+    redirect_to profile_path(@profile)
+  end
+
+  def show
+    authorize @profile = User.find(params[:id]).profile
   end
 
   private

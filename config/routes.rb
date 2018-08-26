@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :profiles, only: [:create, :update, :edit, :show]
+  resources :profiles, only: [:create, :update, :show] do
+    collection do                       # collection => no restaurant id in URL
+      get 'edit', to: "profiles#edit"  # RestaurantsController#top
+    end
+  end
 
   resources :apartments do
     collection do                       # collection => no restaurant id in URL
