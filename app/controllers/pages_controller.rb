@@ -14,10 +14,6 @@ class PagesController < ApplicationController
 
   private
 
-  def user_params
-    params.require(:profile).permit(:account_type)
-  end
-
   def check_if_account_type_is_set
     if user_signed_in?
       redirect_to setaccount_path if current_user.profile.nil?

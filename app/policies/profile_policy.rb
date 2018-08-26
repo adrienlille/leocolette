@@ -9,7 +9,11 @@ class ProfilePolicy < ApplicationPolicy
     true
   end
 
-  def new?
-    true
+  def edit?
+    record.user == user
+  end
+
+  def update?
+    edit?
   end
 end
