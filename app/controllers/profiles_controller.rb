@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    authorize @profile = User.find(params[:id]).profile
+    authorize @profile = Profile.find(params[:id])
   end
 
   private

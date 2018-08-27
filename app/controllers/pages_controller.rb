@@ -9,7 +9,13 @@ class PagesController < ApplicationController
   end
 
   def setaccount
-    @profile = Profile.new
+    if current_user.profile.nil?
+      @profile = Profile.new
+      @profile.user = current_user
+      @profile.save!
+    else
+      redirect_to home_path
+    end
   end
 
   private
