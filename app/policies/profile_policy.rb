@@ -5,7 +5,7 @@ class ProfilePolicy < ApplicationPolicy
     end
   end
 
-  def create?
+  def setaccount?
     true
   end
 

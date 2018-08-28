@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     collection do                       # collection => no restaurant id in URL
       get 'edit', to: "profiles#edit"  # RestaurantsController#top
       post 'edit', to: 'profiles#create'
-      patch 'edit', to: 'profiles#update'
+      patch ':id', to: 'profiles#setaccount'
     end
   end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180824105559) do
+ActiveRecord::Schema.define(version: 20180827194012) do
 
   create_table "apartments", force: :cascade do |t|
     t.string "name"
@@ -47,6 +47,13 @@ ActiveRecord::Schema.define(version: 20180824105559) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "city"
+    t.integer "postal_code"
+    t.string "about_me"
+    t.string "phone_number"
+    t.string "gender"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 

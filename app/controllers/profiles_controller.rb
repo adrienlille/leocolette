@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
-  def create
-    authorize @profile = Profile.new(set_account_params)
-    @profile.user = current_user
+  def setaccount
+    authorize @profile = current_user.profile
+    @profile.attributes = set_account_params
     @profile.save!
     redirect_to root_path
   end
@@ -28,6 +28,6 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:photo)
+    params.require(:profile).permit(:photo, :first_name, :last_name, :city, :postal_code, :about_me, :gender)
   end
 end

@@ -1,4 +1,21 @@
-<%= form_for @profile , url: {action: "update"} do |f| %>
+<%= simple_form_for @profile , url: {action: "update"} do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% @profile.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.input :first_name, label: 'First name', error: 'Username is mandatory, please specify one' %>
+  <%= f.input :last_name, label: 'Last name', error: 'Last name is mandatory, please specify one'  %>
+  <%= f.input :city, label: 'City', error: 'City is mandatory, please specify one'%>
+  <%= f.radio_button :gender, "M" %>
+  <%= f.label :gender_M, "Male" %>
+  <%= f.radio_button :gender, "F" %>
+  <%= f.label :gender_F, "Female" %>
+  <%= f.input :about_me %>
   <%= f.file_field :photo %>
   <%= f.hidden_field :photo_cache, as: :hidden %>
   <%= f.submit %>

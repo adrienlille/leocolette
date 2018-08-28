@@ -9,7 +9,7 @@ class ApartmentPolicy < ApplicationPolicy
   end
 
   def create?
-    user.account_type == "2"
+    user.profile.account_type == 2
   end
 
   def index?
