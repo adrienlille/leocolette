@@ -42,6 +42,9 @@ gem 'pry-byebug', group: [:development, :test]
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+#gem 'tokyocabinet', '~> 1.32.0'
+#gem 'gulp'
+gem 'ruby-nodejs'
 
 group :production do
   gem 'pg'

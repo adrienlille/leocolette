@@ -4,7 +4,7 @@
     <h2><%= apartment.name %></h2>
     <p><%= apartment.description %></p>
   </div>
-  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+  <img class="card-user" src="<%= apartment.user.profile.photo %>">
   <a class="card-link" href="<%= apartment_path(apartment) %>" ></a>
 </div>
 
