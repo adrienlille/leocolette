@@ -1,10 +1,16 @@
+<% if policy(@apartment).edit? %>
+  <%= link_to "Edti apartment info", edit_apartment_path(@apartment), class: "btn btn-primary" %>
+<% end %>
+
 <h2><%= @apartment.name %></h2>
 <p><%= @apartment.street %></p>
 
-<div>
-  <%= simple_form_for [@apartment, @booking] do |f| %>
-    <%= f.input :start_date, as: :date %>
-    <%= f.input :end_date, as: :date %>
-    <%= f.button :submit, class: "btn btn-primary"  %>
-  <% end %>
- </div>
+<% if policy(@booking).edit? %>
+  <div>
+    <%= simple_form_for [@apartment, @booking] do |f| %>
+      <%= f.input :start_date, as: :date %>
+      <%= f.input :end_date, as: :date %>
+      <%= f.button :submit, class: "btn btn-primary"  %>
+    <% end %>
+   </div>
+ <% end %>

@@ -12,6 +12,10 @@ class ApartmentPolicy < ApplicationPolicy
     user.profile.account_type == 2
   end
 
+  def new?
+    create?
+  end
+
   def index?
     true
   end

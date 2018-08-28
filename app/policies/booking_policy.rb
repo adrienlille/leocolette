@@ -6,14 +6,14 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def new?
-      user.account_type == 1
-    end
+      create?
+  end
 
-    def create?
-      user.account_type == 1
-    end
+  def create?
+    user.account_type == 1
+  end
 
-    def show?
-      user.account_type == (1 || 2)
-    end
+  def show?
+    user.account_type == (1 || 2)
+  end
 end
