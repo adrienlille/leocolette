@@ -34,8 +34,8 @@ gem 'turbolinks', '~> 5'
 gem 'devise'
 gem 'pundit'
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass' # Bootstrap v3
-gem 'font-awesome-sass'
+#gem 'bootstrap-sass' # Bootstrap v3
+#gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'pry-rails', group: [:development, :test]
 gem 'pry-byebug', group: [:development, :test]
