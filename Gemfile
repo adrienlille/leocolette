@@ -35,7 +35,7 @@ gem 'devise'
 gem 'pundit'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass' # Bootstrap v3
-gem 'font-awesome-sass'
+#gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'pry-rails', group: [:development, :test]
 gem 'pry-byebug', group: [:development, :test]
@@ -45,6 +45,8 @@ gem 'carrierwave', '~> 1.2'
 #gem 'tokyocabinet', '~> 1.32.0'
 #gem 'gulp'
 gem 'ruby-nodejs'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 group :production do
   gem 'pg'
