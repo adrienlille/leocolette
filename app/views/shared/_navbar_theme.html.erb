@@ -31,7 +31,8 @@
 
                 <% if user_signed_in? %>
 
-                  <li><%= link_to "Host", new_apartment_path %></li>
+                  <li><%= link_to "Host", new_apartment_path if current_user.profile.account_type == 2 %></li>
+                  <li><%= link_to "Accomodations", apartments_path  %></li>
                   <li><%= link_to "My Profile", profile_path(current_user.profile) %></li>
                   <li><%= link_to "Messages", "#" %></li>
                   <li><%= link_to "About", "#" %></li>
