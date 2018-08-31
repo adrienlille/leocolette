@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
-  before_action :check_if_account_type_is_set, :except => [:setaccount]
+  #before_action :check_if_account_type_is_set, :except => [:setaccount]
 
   include Pundit
 

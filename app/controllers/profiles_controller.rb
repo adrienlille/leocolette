@@ -1,10 +1,10 @@
 class ProfilesController < ApplicationController
-  # def setaccount
-  #   authorize @profile = current_user.profile
-  #   @profile.attributes = set_account_params
-  #   @profile.save!
-  #   redirect_to root_path
-  # end
+  def saveaccounttype
+    authorize @profile = current_user.profile
+    @profile.attributes = set_account_params
+    @profile.save!
+    redirect_to root_path
+  end
 
   def setaccount
     if (current_user.profile.nil? or current_user.profile.account_type.nil?)

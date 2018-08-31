@@ -9,6 +9,10 @@ class ProfilePolicy < ApplicationPolicy
     true
   end
 
+  def saveaccounttype?
+    user.profile.account_type.nil?
+  end
+
   def edit?
     record.user == user
   end

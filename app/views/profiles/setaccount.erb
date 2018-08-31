@@ -1,44 +1,47 @@
-<%= form_for @profile  do |f| %>
-  <%= f.radio_button :account_type, "1" %>
-  <%= f.submit %>
+
+
 
 
 <!-- INTEREST SECTION -->
-<section class="clearfix interestArea">
-  <div class="container">
-    <div class="page-header text-center">
-      <h2>First time here? <small>Please tell us what you came here for</small></h2>
-    </div>
-    <div class="row">
-      <div class="col-sm-6 col-xs-12">
-        <a href="#" class="interestContent">
-          <%= f.radio_button :account_type, "1" %>
-          <span>
-            <i class="icon-listy icon-tea-cup-1"></i>
-            Restaurant
-          </span>
-        </a>
+<form action ="setaccount" method="post">
+  <section class="clearfix interestArea">
+    <div class="container">
+      <div class="page-header text-center">
+        <h2>First time here? <small>Please tell us what you came here for</small></h2>
       </div>
-      <div class="col-sm-6 col-xs-12">
-        <a href="#" class="interestContent">
-          <%= f.radio_button :account_type, "2" %>
-          <span>
-            <i class="icon-listy icon-building"></i>
-            Hotels
-          </span>
-        </a>
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+          <a href="#" class="interestContent">
+            <input type="radio" value="1" name="profile[account_type]" id="profile_account_type_1" />
+            <span>
+              <i class="icon-listy icon-tea-cup-1"></i>
+              Restaurant
+            </span>
+          </a>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <a href="#" class="interestContent">
+            <input type="radio" value="2" name="profile[account_type]" id="profile_account_type_2" />
+            <span>
+              <i class="icon-listy icon-building"></i>
+              Hotels
+            </span>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<% end %>
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+  <input type="submit" />
+
+</form>
 
 <script type="text/javascript">
 
   function resetchoices(){
     document.querySelectorAll(".interestContent").forEach((choicebox) => {
-      choicebox.classList.remove("icon-listy");
+      choicebox.classList.remove("choice-selected");
       console.log("ooo");
     });
   };
@@ -46,7 +49,7 @@
   document.querySelectorAll(".interestContent").forEach((choicebox) => {
     choicebox.addEventListener("click", (event) => {
       resetchoices();
-      event.currentTarget.classList.add("icon-listy");
+      event.currentTarget.classList.add("choice-selected");
       choicebox.querySelector("input").checked = true;
       console.log("aa");
     });

@@ -4006,7 +4006,8 @@ footer {
 }
 
 .interestContent:hover {
-  background-color: #2196f3;
+  /* background-color: #2196f3;*/
+  background-color: black;
   border-color: #2196f3;
 }
 
@@ -9794,4 +9795,24 @@ body.pattern-04 {
   background-repeat: repeat;
   background-attachment: fixed;
   background-position: center;
+}
+
+/*CSS FOR SET ACCOUNT VIEW*/
+
+.choice-selected {
+  background-color: #2196f3;
+  color: white !important;
+}
+
+.choice-selected .icon-listy {
+  color: white !important;
+}
+
+.interestContent input[type="radio"] {
+  display: none;
+}
+
+.interestContent {
+
+
 }
