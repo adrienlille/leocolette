@@ -1,8 +1,35 @@
 <%= form_for @profile  do |f| %>
   <%= f.radio_button :account_type, "1" %>
-  <%= f.label :account_type_leo, "Je souhaite voyager" %>
-  <%= f.radio_button :account_type, "2" %>
-  <%= f.label :account_type_leo, "Je souhaite heberger" %>
   <%= f.submit %>
-<% end %>
 
+
+<!-- INTEREST SECTION -->
+<section class="clearfix interestArea">
+  <div class="container">
+    <div class="page-header text-center">
+      <h2>First time here? <small>Please tell us what you came here for</small></h2>
+    </div>
+    <div class="row">
+      <div class="col-sm-3 col-xs-12">
+        <a href="category-grid-full.html" class="interestContent">
+          <%= f.radio_button :account_type, "1" %>
+          <span>
+            <i class="icon-listy icon-tea-cup-1"></i>
+            Restaurant
+          </span>
+        </a>
+      </div>
+      <div class="col-sm-3 col-xs-12">
+        <a href="category-list-full.html" class="interestContent">
+          <%= f.radio_button :account_type, "2" %>
+          <span>
+            <i class="icon-listy icon-building"></i>
+            Hotels
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% end %>
