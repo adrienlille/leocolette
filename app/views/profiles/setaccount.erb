@@ -35,8 +35,17 @@
 <% end %>
 
 <script type="text/javascript">
+
+  function resetchoices(){
+    document.querySelectorAll(".interestContent").forEach((choicebox) => {
+      choicebox.classList.remove("icon-listy");
+      console.log("ooo");
+    });
+  };
+
   document.querySelectorAll(".interestContent").forEach((choicebox) => {
     choicebox.addEventListener("click", (event) => {
+      resetchoices();
       event.currentTarget.classList.add("icon-listy");
       console.log("aa");
     });
