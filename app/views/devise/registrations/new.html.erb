@@ -1,17 +1,40 @@
-<h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+<!-- SIGNUP SECTION -->
+<section class="clearfix loginSection">
+  <div class="container">
+    <div class="row">
+      <div class="center-block col-md-5 col-sm-6 col-xs-12">
+        <div class="panel panel-default loginPanel">
+          <div class="panel-heading text-center">Registration</div>
+          <div class="panel-body">
+            <form class="loginForm" id="new_user" action="/users" accept-charset="UTF-8" method="post" >
+              <div class="form-group">
+                <label for="email">E-mail *</label>
+                <input type="email" class="form-control" name="user[email]" id="user_email">
+              </div>
+              <div class="form-group">
+                <label for="password">Password *</label>
+                <input type="password" class="form-control" name="user[password]" id="user_password">
+                <p class="help-block">6 characters minimum.</p>
+              </div>
+              <div class="form-group">
+                <label for="user_password_confirmation">Password confirmation*</label>
+                <input type="password" class="form-control" name="user[password_confirmation]" id="user_password_confirmation">
+              </div>
+              <div class="form-group">
+                <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+                <button type="submit" class="btn btn-primary pull-left">Let's go !</button>
+                <a href="<%= new_user_password_path %>" class="pull-right link">Fogot Password?</a>
+              </div>
+            </form>
+          </div>
+          <div class="panel-footer text-center">
+            <p>Already a member? <a href="<%= user_session_path %>" class="link">Sign in</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+</section>
 
 <%= render "devise/shared/links" %>
