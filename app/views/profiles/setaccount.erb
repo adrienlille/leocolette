@@ -10,8 +10,8 @@
       <h2>First time here? <small>Please tell us what you came here for</small></h2>
     </div>
     <div class="row">
-      <div class="col-sm-3 col-xs-12">
-        <a href="category-grid-full.html" class="interestContent">
+      <div class="col-sm-6 col-xs-12">
+        <a href="#" class="interestContent">
           <%= f.radio_button :account_type, "1" %>
           <span>
             <i class="icon-listy icon-tea-cup-1"></i>
@@ -19,8 +19,8 @@
           </span>
         </a>
       </div>
-      <div class="col-sm-3 col-xs-12">
-        <a href="category-list-full.html" class="interestContent">
+      <div class="col-sm-6 col-xs-12">
+        <a href="#" class="interestContent">
           <%= f.radio_button :account_type, "2" %>
           <span>
             <i class="icon-listy icon-building"></i>
@@ -33,3 +33,11 @@
 </section>
 
 <% end %>
+
+<script type="text/javascript">
+  document.querySelectorAll(".interestContent").forEach((choicebox) => {
+    choicebox.addEventListener("click", (event) => {
+      event.currentTarget.classList.add("choice-selected");
+    });
+  });
+</script>
