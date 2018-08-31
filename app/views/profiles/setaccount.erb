@@ -47,6 +47,7 @@
     choicebox.addEventListener("click", (event) => {
       resetchoices();
       event.currentTarget.classList.add("icon-listy");
+      choicebox.querySelector("input").checked = true;
       console.log("aa");
     });
   });
