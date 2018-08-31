@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   before_action :check_if_account_type_is_set, :except => [:saveaccounttype, :setaccount]
 
   def home
+    @navbar_home = true
   end
 
   def about
