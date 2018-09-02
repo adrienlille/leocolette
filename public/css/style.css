@@ -9804,7 +9804,7 @@ body.pattern-04 {
   color: white !important;
 }
 
-.choice-selected .icon-listy {
+.choice-selected i {
   color: white !important;
 }
 
@@ -9812,9 +9812,8 @@ body.pattern-04 {
   display: none;
 }
 
-.interestContent {
-
-
+.interestContent i {
+  font-family: 'fontawesome' !important;
 }
 
 /*****************************************
