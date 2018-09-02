@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   #before_action :check_if_account_type_is_set, :except => [:setaccount]
 
+
   include Pundit
 
   # Pundit: white-list approach.
@@ -16,6 +17,7 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
 
+
   protected
 
   private
@@ -24,14 +26,16 @@ class ApplicationController < ActionController::Base
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
 
-  def check_if_account_type_is_set
-    if user_signed_in?
-      redirect_to setaccount_path if (current_user.profile.nil? or current_user.profile.account_type.nil?)
+  def user_not_authorized
+    if account_type_is_set?
+      flash[:alert] = "You are not authorized to perform this action."
+      redirect_to root_path
+      else
+        redirect_to setaccount_path
     end
   end
 
-  def user_not_authorized
-    flash[:alert] = "You are not authorized to perform this action."
-    redirect_to(root_path)
+  def account_type_is_set?
+    current_user.profile and current_user.profile.account_type
   end
 end

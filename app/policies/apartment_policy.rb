@@ -9,7 +9,7 @@ class ApartmentPolicy < ApplicationPolicy
   end
 
   def create?
-    user.profile.account_type == 2
+    account_type_is_set? and user.profile.account_type == 2
   end
 
   def new?
@@ -34,5 +34,11 @@ class ApartmentPolicy < ApplicationPolicy
 
   def update?
     edit?
+  end
+
+  private
+
+  def account_type_is_set?
+    user.profile and user.profile.account_type
   end
 end
