@@ -19,16 +19,17 @@
             <div class="profileImage">
              <% if current_user.profile %>
                 <% if current_user.profile.photo? %>
-                  <%= cl_image_tag current_user.profile.photo.path, width: 50, height: 50, crop: :fill, class: "img-circle" %>
+                  <%= cl_image_tag current_user.profile.photo, width: 200, height: 200, gravity: :face, crop: :fill, class: "img-circle" %>
                   <% else %>
                     <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/a/ad/Placeholder_no_text.svg", class: "img-circle" %>
                 <% end %>
               <% end %>
               <div class="file-upload profileImageUpload">
                 <div class="upload-area">
-                  <label for="upload" class="file-upload__label">Upload a Picture <i class="icon-listy icon-upload"></i></label>
-                  <input id="upload" class="file-upload__input" type="file" name="profile[photo]">
+                  <label for="profile_photo" class="file-upload__label">Upload a Picture <i class="icon-listy icon-upload"></i></label>
+                  <input id="profile_photo" class="file-upload__input" type="file" name="profile[photo]">
                   <%= f.hidden_field :photo_cache, as: :hidden %>
+                  <%= f.input :photo %>
                 </div>
               </div>
             </div>
@@ -70,6 +71,9 @@
                   <div class="form-group col-sm-6 col-xs-12">
                     <%= f.input :postal_code, label: 'Postal Code', error: 'Postal code is mandatory, please specify one'%>
                   </div>
+                  <div class="form-group col-sm-6 col-xs-12">
+                    <%= f.input :phone_number, label: 'Phone number', error: 'Postal code is mandatory, please specify one'%>
+                  </div>
                   <div class="form-group col-xs-12">
                     <label for="aboutYou">About Me</label>
                     <%= f.text_area :about_me, rows: "5", class: "form-control" %>
@@ -79,7 +83,7 @@
             </div>
 
             <div class="btn-area mt30">
-              <%= f.submit class: "btn btn-primary", value: "Save Change"%>
+              <%= f.submit class: "btn btn-primary", value: "Save Change" %>
             </div>
             <!--
             <div class="dashboardBoxBg mt30">

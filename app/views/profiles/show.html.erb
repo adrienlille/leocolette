@@ -1,3 +1,27 @@
-<%= link_to "Edit my profile", edit_profiles_path, :class => "btn btn-primary" if @profile.id == current_user.profile.id%>
 
-<%= @profile.photo %>
+
+<!-- USER PROFILE SECTION -->
+<section class="user-profile-section bg-light">
+  <div class="container">
+    <div class="user-profile">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <div class="user-img">
+            <%= cl_image_tag @profile.photo, width: 400, height: 400, crop: :fill %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+          <div class="user-profile-content">
+            <h3 class="user-name"><%= @profile.first_name %></h3>
+            <span class="designation">Developer</span>
+            <p><%= @profile.about_me %></p>
+            <ul class="user-contact-details">
+              <li><i class="fa fa-phone" aria-hidden="true"></i><%= @profile.phone_number %></li>
+            </ul>
+          </div>
+           <%= link_to "Edit my profile", edit_profiles_path, :class => "btn btn-default btn-primary" if @profile.id == current_user.profile.id%>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
