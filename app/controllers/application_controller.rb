@@ -29,4 +29,9 @@ class ApplicationController < ActionController::Base
       redirect_to setaccount_path if (current_user.profile.nil? or current_user.profile.account_type.nil?)
     end
   end
+
+  def user_not_authorized
+    flash[:alert] = "You are not authorized to perform this action."
+    redirect_to(root_path)
+  end
 end
