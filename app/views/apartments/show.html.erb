@@ -5,7 +5,7 @@
 <h2><%= @apartment.name %></h2>
 <p><%= @apartment.street %></p>
 
-<% if policy(@booking).edit? %>
+<% if policy(@booking).create? %>
   <div>
     <%= simple_form_for [@apartment, @booking] do |f| %>
       <%= f.input :start_date, as: :date %>
