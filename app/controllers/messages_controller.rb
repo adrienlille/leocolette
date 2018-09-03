@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
 
   def index
-    @apartments = policy_scope(Message)
+    @messages = policy_scope(Message)
   end
 end
 
