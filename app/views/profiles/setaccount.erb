@@ -10,7 +10,7 @@
         <h2>First time here? <small>Please tell us what you came here for</small></h2>
       </div>
       <div class="row">
-        <div class="col-sm-6 col-xs-12">
+        <div class="col-sm-offset-3 col-sm-3 col-xs-12">
           <a href="#" class="interestContent">
             <input type="radio" value="1" name="profile[account_type]" id="profile_account_type_1" />
             <span>
@@ -19,21 +19,23 @@
             </span>
           </a>
         </div>
-        <div class="col-sm-6 col-xs-12">
+        <div class="col-sm-3 col-xs-12">
           <a href="#" class="interestContent">
             <input type="radio" value="2" name="profile[account_type]" id="profile_account_type_2" />
             <span>
-              <i class="icon-listy icon-building"></i>
-              Hotels
+              <i class="fas fa-home"></i>
+              Host
             </span>
           </a>
         </div>
+      </div>
+      <div class="form-group col-xs-12">
+        <input type="submit" class="text-center btn btn-default btn-primary"/>
       </div>
     </div>
   </section>
 
   <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
-  <input type="submit" />
 
 </form>
 
