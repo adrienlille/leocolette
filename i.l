@@ -1,0 +1,13 @@
+=> [[32m#<User id: 1, email: "colette@senior.fr", created_at: "2018-08-27 19:42:39", updated_at: "2018-09-04 14:44:00">[0m,
+ [32m#<User id: 2, email: "test@123.fe", created_at: "2018-08-28 13:13:45", updated_at: "2018-08-28 13:13:45">[0m,
+ [32m#<User id: 3, email: "test2@123.fr", created_at: "2018-08-28 13:16:33", updated_at: "2018-08-28 13:16:33">[0m,
+ [32m#<User id: 4, email: "test@abc.fr", created_at: "2018-08-28 13:33:51", updated_at: "2018-08-28 13:33:51">[0m,
+ [32m#<User id: 5, email: "colette@old.com", created_at: "2018-08-28 13:50:19", updated_at: "2018-08-28 13:50:19">[0m,
+ [32m#<User id: 6, email: "test@lol.fr", created_at: "2018-08-31 09:40:42", updated_at: "2018-09-02 15:07:42">[0m,
+ [32m#<User id: 7, email: "loueur@leocolette.fr", created_at: "2018-09-02 14:58:20", updated_at: "2018-09-02 14:58:20">[0m,
+ [32m#<User id: 8, email: "tesssst@lol.fr", created_at: "2018-09-02 15:17:16", updated_at: "2018-09-02 15:17:16">[0m,
+ [32m#<User id: 9, email: "test@lool.fr", created_at: "2018-09-02 15:32:24", updated_at: "2018-09-02 15:32:25">[0m,
+ [32m#<User id: 10, email: "dadazd@uuu.fr", created_at: "2018-09-02 15:38:23", updated_at: "2018-09-02 15:38:23">[0m,
+ [32m#<User id: 11, email: "dadazd@zze.fr", created_at: "2018-09-02 17:36:53", updated_at: "2018-09-02 17:36:53">[0m,
+ [32m#<User id: 12, email: "ss@asassa.fr", created_at: "2018-09-02 17:37:58", updated_at: "2018-09-02 17:37:58">[0m,
+ [32m#<User id: 13, email: "leo@jeune.fr", created_at: "2018-09-03 14:22:29", updated_at: "2018-09-03 14:22:29">[0m]

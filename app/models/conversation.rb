@@ -7,9 +7,9 @@ class Conversation < ApplicationRecord
   validates :user1, uniqueness: { scope: [:user2_id, :apartment_id] }
   validates :user2, uniqueness: { scope: [:user1_id, :apartment_id] }
 
-  scope :between, -> (sender_id, recipient_id) do
-    where(sender_id: sender_id, recipient_id: recipient_id).or(
-      where(sender_id: recipient_id, recipient_id: sender_id)
+  scope :between, -> (user1_id, user2_id) do
+    where(user1_id: user1_id, user2_id: user2_id).or(
+      where(user1_id: user2_id, user2_id: user1_id)
     )
   end
 end
