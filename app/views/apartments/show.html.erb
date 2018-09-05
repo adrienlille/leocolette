@@ -1,5 +1,5 @@
 <% if policy(@apartment).edit? %>
-  <%= link_to "Edti apartment info", edit_apartment_path(@apartment), class: "btn btn-primary" %>
+  <%= link_to "Edit apartment info", edit_apartment_path(@apartment), class: "btn btn-primary" %>
 <% end %>
 
 <h2><%= @apartment.name %></h2>
@@ -12,5 +12,8 @@
       <%= f.input :end_date, as: :date %>
       <%= f.button :submit, class: "btn btn-primary"  %>
     <% end %>
-   </div>
- <% end %>
+  </div>
+<% end %>
+
+<%= @apartment.user %>
+<%= link_to "Message me!", conversations_path(user1_id: current_user.id, user2_id: @apartment.user.id, apartment_id: @apartment.id), method: "post" %>
