@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     resource :bookings, only: [:create, :new, :show, :update]
   end
 
-  resources :conversations, only: [:index, :create, :shows]
+  resources :conversations do
+    resources :messages
+  end
 
 end

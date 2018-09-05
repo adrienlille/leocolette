@@ -1,3 +1,17 @@
-<%= @conversations.each do |conv|  %>
-<%= conv.id %>
-<% end %>
+<div class=”ui segment”>
+ <h3>Mailbox</h3>
+ <div class=”ui list”>
+  <div class=”item”>
+   <% @conversations.each do |conversation| %>
+   <% if conversation.user1_id == current_user.id ||      conversation.user2_id == current_user.id %>
+    <% if conversation.user1_id == current_user.id %>
+      <% recipient = User.find(conversation.user2_id) %>
+    <% else %>
+      <% recipient = User.find(conversation.user1_id) %>
+    <% end %>
+    <%= link_to recipient.first_name,   conversation_messages_path(conversation)%>
+   <% end %>
+  <% end %>
+  </div>
+ </div>
+</div>
