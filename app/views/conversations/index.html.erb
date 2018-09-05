@@ -1,17 +1,31 @@
-<div class=”ui segment”>
- <h3>Mailbox</h3>
- <div class=”ui list”>
-  <div class=”item”>
-   <% @conversations.each do |conversation| %>
-   <% if conversation.user1_id == current_user.id ||      conversation.user2_id == current_user.id %>
-    <% if conversation.user1_id == current_user.id %>
-      <% recipient = User.find(conversation.user2_id) %>
-    <% else %>
-      <% recipient = User.find(conversation.user1_id) %>
-    <% end %>
-    <%= link_to recipient.email,   conversation_messages_path(conversation)%>
-   <% end %>
-  <% end %>
+<section class="clearfix bg-dark equalHeight dashboardSection">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-default panel-card">
+          <div class="panel-heading" id="message">
+            Messages <span class="label label-default label-sm">3 New</span> <a href="" class="btn label label-primary">Send Message</a>
+          </div>
+          <div class="panel-body panel-message">
+            <ul class="list-unstyled panel-list">
+              <% @conversations.each do |conversation| %>
+              <%= render 'message_preview', message: @conversation.messages.last %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
- </div>
-</div>
+</section>
+
+
+
+              <li class="messageCommon recentMessage listWrapper">
+                <span class="messageInfo">
+                  <h5>Aden, <small>Today <span class="dayTime">message.message_time</span></small></h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </span>
+                <span class="messageTime">5m ago</span>
+              </li>
+
