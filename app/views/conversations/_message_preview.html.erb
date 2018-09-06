@@ -1,8 +1,8 @@
 <%= link_to conversation_messages_path(conversation) do %>
 <li class="messageCommon recentMessage listWrapper">
   <span class="messageInfo">
-    <h5><%= message.user.email%>, <small><%= message.date%> <span class="dayTime"><%= message.time %></span></small></h5>
-    <p><%= message.body %></p>
+    <h5><%= message&.user&.email%>, <small><%= message&.date%> <span class="dayTime"><%= message&.time %></span></small></h5>
+    <p><%= message&.body %></p>
   </span>
   <span class="messageTime">5m ago</span>
 </li>

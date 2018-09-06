@@ -8,8 +8,8 @@
           </div>
           <div class="panel-body panel-message">
             <ul class="list-unstyled panel-list">
-              <% @conversations.each do |conversation| %>
-              <%= render 'message_preview', message: conversation.messages.last, conversation: conversation %>
+              <% @conversations&.each do |conversation| %>
+              <%= render 'message_preview', message: conversation&.messages&.last, conversation: conversation if !@conversation.nil? %>
               <% end %>
             </ul>
           </div>
