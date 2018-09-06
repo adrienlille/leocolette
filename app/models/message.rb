@@ -3,7 +3,15 @@ class Message < ApplicationRecord
   belongs_to :user
   validates_presence_of :body, :conversation_id, :user_id
 
- def message_time
+ def full_time
   created_at.strftime("%m/%d/%y at %l:%M %p")
+ end
+
+ def date
+  created_at.strftime("%m/%d/%y")
+ end
+
+ def time
+  created_at.strftime("%l:%M %p")
  end
 end

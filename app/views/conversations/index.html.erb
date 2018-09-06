@@ -9,7 +9,7 @@
           <div class="panel-body panel-message">
             <ul class="list-unstyled panel-list">
               <% @conversations.each do |conversation| %>
-              <%= render 'message_preview', message: @conversation.messages.last %>
+              <%= render 'message_preview', message: conversation.messages.last, conversation: conversation %>
               <% end %>
             </ul>
           </div>
@@ -18,14 +18,4 @@
     </div>
   </div>
 </section>
-
-
-
-              <li class="messageCommon recentMessage listWrapper">
-                <span class="messageInfo">
-                  <h5>Aden, <small>Today <span class="dayTime">message.message_time</span></small></h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </span>
-                <span class="messageTime">5m ago</span>
-              </li>
 

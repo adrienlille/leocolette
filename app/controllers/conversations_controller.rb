@@ -4,10 +4,10 @@ class ConversationsController < ApplicationController
   end
 
   def create
-    if Conversation.between(params[:user1_id],params[:user2_id])
+    if Conversation.between(params[:user1_id],params[:user2_id], params[:apartment_id])
      .present?
       authorize @conversation = Conversation.between(params[:user1_id],
-       params[:user2_id]).first
+       params[:user2_id], params[:apartment_id]).first
     else
       authorize @conversation = Conversation.create!(conversation_params)
     end
