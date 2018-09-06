@@ -34,7 +34,7 @@ class ProfilesController < ApplicationController
   private
 
   def set_account_params
-    params.require(:profile).permit(:account_type)
+    params.require(:profile).permit(:account_type, :first_name)
   end
 
   def profile_params
