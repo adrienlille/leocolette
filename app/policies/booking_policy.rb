@@ -1,8 +1,16 @@
 class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope
+      if user.profile.account_type == 1
+        scope.where(user: user)
+      else
+        scope.where(apartment: user.apartments)
+      end
     end
+  end
+
+  def index?
+    true
   end
 
   def new?

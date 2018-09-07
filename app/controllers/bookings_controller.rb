@@ -15,6 +15,10 @@ class BookingsController < ApplicationController
     redirect_to apartment_path(apartment)
   end
 
+  def index
+    authorize @bookings = policy_scope(Booking)
+  end
+
   private
 
   def safe_params

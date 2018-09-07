@@ -1,0 +1,38 @@
+<%= @bookings %>
+
+
+<div class="main-wrapper">
+<section class="clearfix bg-dark listyPage">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="dashboardPageTitle">
+          <h2>My Bookings</h2>
+        </div>
+        <div class="table-responsive"  data-pattern="priority-columns">
+          <table class="table listingsTable">
+            <thead>
+              <tr class="rowItem">
+                <th data-priority="">Bookings</th>
+                <th data-priority="1">Featured</th>
+                <th data-priority="6">Views</th>
+                <th data-priority="2">Reviews</th>
+                <th data-priority="3">Start Date</th>
+                <th data-priority="4">End Date</th>
+                <th data-priority="5">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if not @bookings.nil? %>
+                <% @bookings.each do |booking| %>
+                  <%= render 'booking', booking: booking %>
+                <% end %>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
