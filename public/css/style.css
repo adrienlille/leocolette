@@ -9851,3 +9851,15 @@ body.pattern-04 {
     opacity: 0;
 }
 
+
+/*BUTTONS: PROBLEMS WITH PADDING*/
+
+
+.btn {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+.container {
+  width: 75%;
+}

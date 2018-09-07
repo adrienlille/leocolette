@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
       flash[:alert] = "Starting date cannot be posterior to ending date."
     elsif period_available?([@booking.start_date, @booking.end_date], apartment)
       @booking.apartment_id = apartment.id
+      @booking.status = 'pending'
       @booking.save!
       flash[:notice] = "Your booking has successfully been requested to the owner."
     else

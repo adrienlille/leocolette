@@ -3,14 +3,14 @@
     <ul class="list-inline listingsInfo">
       <li><a href="#"><img src="<%= booking.apartment.photo %>" alt="Image Listings"></a></li>
       <li>
-        <h3>Glory Hole Doughnuts <i class="fa fa-check-circle" aria-hidden="true"></i></h3>
+        <h3><%= booking.apartment.name %> <i class="fa fa-check-circle" aria-hidden="true"></i></h3>
         <h5>1569 Queen Street West <span class="cityName">Toronto</span></h5>
         <span class="category">Hotel</span>
         <p>From $50.00 /Night <span class="likeArea"><i class="fa fa-heart-o" aria-hidden="true"></i>10k</span></p>
       </li>
     </ul>
   </td>
-  <td><i class="fa fa-check primaryColor" aria-hidden="true"></i></td>
+  <td><%= link_to "send message", conversations_path(user1_id: booking.apartment.user.id, user2_id: booking.user.id, apartment_id: booking.apartment_id), method: "post", class: "btn btn-primary" %></td>
   <td>784</td>
   <td>
     <ul class="list-inline rating">
@@ -25,5 +25,5 @@
   </td>
   <td><%= booking.start_date %></td>
   <td><%= booking.end_date %></td>
-  <td><span class="label label-warning">Pending</span></td>
+  <td><%= raw(booking.status_tag) %></td>
 </tr>
