@@ -9860,7 +9860,9 @@ body.pattern-04 {
   padding-right: 15px !important;
 }
 
-.container {
+/*BOOKING LISTING */
+
+.booking-list {
   width: 90%;
 }
 
@@ -9870,4 +9872,9 @@ body.pattern-04 {
 
 .user {
   font-size: 20px !important;
+}
+
+/*Get nav buttons to be slightly lower (logo to low) */
+.nav a {
+  padding-top: 45px !important;
 }
