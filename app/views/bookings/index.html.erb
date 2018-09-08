@@ -11,7 +11,7 @@
             <thead>
               <tr class="rowItem">
                 <th data-priority="">Bookings</th>
-                <th data-priority="1">Requested by</th>
+                <th data-priority="1"><%= current_user.profile.account_type == 1 ? "Owner" : "Requested by"%></th>
                 <th data-priority="6"></th>
                 <th data-priority="3">Start Date</th>
                 <th data-priority="4">End Date</th>
@@ -21,7 +21,12 @@
             <tbody>
               <% if not @bookings.nil? %>
                 <% @bookings.each do |booking| %>
-                  <%= render 'booking', booking: booking %>
+                  <% if current_user.profile.account_type == 1 %>
+                    <% user = booking.apartment.user %>
+                  <% else %>
+                    <% user = booking.user %>
+                  <% end %>
+                  <%= render 'booking', booking: booking, user: user %>
                 <% end %>
               <% end %>
             </tbody>
