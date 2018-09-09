@@ -10,7 +10,7 @@
             <ul class="list-unstyled panel-list">
               <% if not @conversations.nil? %>
                 <% @conversations&.each do |conversation| %>
-                <%= render 'message_preview', message: conversation&.messages&.last, conversation: conversation %>
+                <%= render 'message_preview', message: conversation&.messages&.last, conversation: conversation if not conversation&.messages&.last.nil? %>
                 <% end %>
               <% end %>
             </ul>
