@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
 
   def update
     authorize booking = Booking.find(params[:id])
-    booking.status = params[:status]
+    booking.status = params[:status] if booking.apartment.owner == current_user
     booking.save!
     redirect_to bookings_path
   end
