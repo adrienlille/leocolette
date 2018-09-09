@@ -9895,3 +9895,34 @@ body.pattern-04 {
   padding: 10px 20px !important;
   margin: 5px;
 }
+
+.pac-container:after {
+    /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
+
+    background-image: none !important;
+    height: 0px;
+}
+
+/* STYLING GGOGLE Autocomplete*/
+.search-bar-home {
+  width: 481px !important;
+}
+
+.pac-container {
+  width: 364.44px !important;
+  font-color: #848484 !important;
+}
+
+.pac-item {
+  font-color: #848484 !important;
+}
+
+.pac-item span {
+  font-size: 15px !important; /* here you can edit the styling of pac fonts */
+  font-family: 'Muli', 'sans-serif' !important;
+  font-color: #848484 !important;
+}
+
+.pac-icon{
+  display: none !important;
+}
