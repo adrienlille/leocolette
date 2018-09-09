@@ -20,6 +20,13 @@ class BookingsController < ApplicationController
     authorize @bookings = policy_scope(Booking)
   end
 
+  def update
+    authorize booking = Booking.find(params[:id])
+    booking.status = params[:status]
+    booking.save!
+    redirect_to bookings_path
+  end
+
   private
 
   def safe_params

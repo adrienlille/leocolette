@@ -9875,6 +9875,23 @@ body.pattern-04 {
 }
 
 /*Get nav buttons to be slightly lower (logo to low) */
-.nav a {
+.nav a  {
   padding-top: 45px !important;
+}
+
+.navbar-btn {
+  margin-top: 29px;
+}
+
+.cancel {
+  background-color: #FE5056 !important;
+}
+
+.approved {
+  background-color: #00BB9E !important;
+}
+
+.small-button {
+  padding: 10px 20px !important;
+  margin: 5px;
 }

@@ -2,6 +2,8 @@ class Booking < ApplicationRecord
   belongs_to :apartment
   belongs_to :user
 
+  validates :status, inclusion: { in: %w(pending canceled approved) }
+
   def status_tag
     if self.status == 'pending'
       return '<span class="label label-warning">Pending</span>'

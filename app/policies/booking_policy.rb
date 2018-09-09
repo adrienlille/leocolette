@@ -24,4 +24,8 @@ class BookingPolicy < ApplicationPolicy
   def show?
     user.profile.account_type == (1 || 2)
   end
+
+  def update?
+    record.apartment.user == user
+  end
 end
