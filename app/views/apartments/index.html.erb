@@ -1,16 +1,19 @@
- <% if policy(@apartment).create? %>
-  <%= link_to "Mettre mon appartement en ligne", new_apartment_path, :class => "btn btn-primary" %>
- <%end%>
-
-<div class="container">
-  <div class="row">
-    <% @apartments.each do |apartment| %>
-      <div class="col-xs-12 col-sm-4">
-        <%= render 'shared/card', apartment: apartment %>
+<section class="clerfix categoryGrid">
+  <div class="container">
+     <% if policy(@apartment).create? %>
+        <%= link_to "Mettre mon appartement en ligne", new_apartment_path, :class => "btn btn-primary" %>
+      <% end %>
+    <div class="row" style="padding-top: 10px">
+      <div class="col-sm-8 col-xs-12">
+        <div class="row">
+          <% @apartments.each do |apartment| %>
+            <%= render 'shared/card_theme', apartment: apartment %>
+          <% end %>
+        </div>
       </div>
-    <% end %>
+    </div>
   </div>
-</div>
+</section>
 
 
 

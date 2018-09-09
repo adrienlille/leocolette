@@ -9926,3 +9926,19 @@ body.pattern-04 {
 .pac-icon{
   display: none !important;
 }
+
+.card-link {
+  text-decoration: none;
+}
+
+.card-user {
+  position: absolute;
+  right: 38px;
+  bottom: 22px;
+  border-radius: 50%;
+}
+
+.user-name-card {
+  margin-right: 50px ;
+  font-size: 15px;
+}
