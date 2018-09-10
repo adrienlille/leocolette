@@ -22,8 +22,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <form action="" method="" class="listing__form">
-          <div class="dashboardBoxBg mb30">
+          <div class="dashboardBoxBg mb30 listing__form">
             <div class="profileIntro paraMargin">
               <h3>I want to host</h3>
               <p>Please enter below the details regarding the place you offer to share. Do not hesitate to specify what you are especting and the rules of the place.</p>
@@ -41,36 +40,30 @@
                 <div class="form-group col-sm-6 col-xs-12">
                   <%= f.number_field :bathrooms, label: 'Bathrooms', class: "form-control", error: 'Please specify how many bathrooms'%>
                 </div>
+                <div class="form-group col-sm-12">
+                  <%= f.input :street, label: 'Street & Number', error: 'Street is mandatory, please specify one'%>
+                </div>
+                <div class="form-group col-sm-6 col-xs-12">
+                  <%= f.input :postal_code, label: 'Postal Code', error: 'Postal code is mandatory, please specify one'%>
+                </div>
+                <div class="form-group col-sm-6 col-xs-12">
+                  <%= f.input :city, label: 'City', error: 'City is mandatory, please specify one'%>
+                </div>
                 <div class="form-group col-xs-12">
                   <label for="discribeTheListing">Discribe the listing</label>
                   <textarea class="form-control" rows="3" placeholder="Discribe the listing"></textarea>
                 </div>
+                <div class="form-group col-xs-12">
+                  <%= f.hidden_field :photo_cache, as: :hidden %>
+                  <%= f.input :photo %>
+                </div>
+              </div>
+              <div class="form-footer text-center">
+                <button type="submit" class="btn-submit">Submit</button>
               </div>
               <% end %>
             </div>
           </div>
-          <div class="dashboardBoxBg mb30">
-            <div class="profileIntro paraMargin">
-              <h3>Gallery</h3>
-              <p>We are not responsible for any damages caused by the use of this website, or by posting business listings here. Please use our site at your own discretion and exercise good judgement as well as common sense when advertising business here.</p>
-              <div class="row">
-                <div class="form-group col-xs-12">
-                  <div class="imageUploader text-center">
-                    <div class="file-upload">
-                      <div class="upload-area">
-                        <input type="file" name="img[]" class="file">
-                        <button class="browse" type="button">Click or Drag images here</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="form-footer text-center">
-            <button type="submit" class="btn-submit">Submit</button>
-          </div>
-        </form>
       </div>
     </div>
   </div>

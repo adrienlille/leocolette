@@ -17,12 +17,14 @@
         </div>
       </div>
     </a>
-    <div class="thingsCaption ">
-      <ul class="list-inline captionItem">
-        <li><i class="fa fa-heart-o" aria-hidden="true"></i> 5k</li>
-        <li class="user-name-card"><%= apartment.user.profile.first_name %></li>
-      </ul>
-      <%= cl_image_tag(apartment.user.profile.photo, class: "card-user", width: 50, height: 50, crop: :fill) %>
-    </div>
+    <a href="<%= profile_path(apartment.user.profile) %>">
+      <div class="thingsCaption ">
+        <ul class="list-inline captionItem">
+          <li><i class="fa fa-heart-o" aria-hidden="true"></i> 5k</li>
+          <li class="user-name-card"><%= apartment.user.profile.first_name %></li>
+        </ul>
+        <%= cl_image_tag(apartment.user.profile.photo, class: "card-user", width: 50, height: 50, crop: :fill) %>
+      </div>
+    </a>
   </div>
 </div>

@@ -1978,7 +1978,7 @@ a.link:hover {
 }
 
 .file {
-  visibility: hidden;
+  /*visibility: hidden;*/
   position: absolute;
 }
 
