@@ -1979,7 +1979,7 @@ a.link:hover {
 
 .file {
   /*visibility: hidden;*/
-  position: absolute;
+  /*position: absolute;*/
 }
 
 /*=== 2.14 LIST ===*/
@@ -6992,8 +6992,8 @@ input[type=radio]:focus,
 }
 
 .form-group .file {
-  visibility: hidden;
-  position: absolute;
+ /* visibility: hidden;
+  position: absolute;*/
 }
 
 .form-group .browse {
