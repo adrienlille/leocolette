@@ -9956,3 +9956,58 @@ body.pattern-04 {
 .owner-details li {
   font-size: 20px; !important;
 }
+
+/*MESSAGES INDEX STYLING*/
+
+.message {
+  display: flex !important;
+  align-items: center !important;
+  padding: 20px !important;
+  border-bottom: 1px solid rgba(220,224,244,0.4) !important;
+}
+.message:last-child {
+  border-bottom: none !important;
+}
+.message-body {
+  flex-grow: 1 !important;
+}
+.message-name {
+  padding-left: 10px !important;
+  min-width: 100px !important;
+}
+.message-name h3 {
+  font-size: 13px !important;
+  margin-bottom: 0px !important;
+}
+.message-name p {
+  font-size: 13px !important;
+  font-weight: lighter !important;
+  opacity: 0.6 !important;
+  margin-top: 5px !important
+  margin-bottom: 1px !important;
+}
+.message-body {
+  padding-left: 10px !important;
+  font-size: 13px !important;
+  color: rgba(0,0,0,0.7) !important;
+}
+.message-body {
+  padding-left: 20px;
+  color: rgba(0,0,0,0.4) !important;
+}
+.message-body strong{
+  color: rgba(0,0,0,0.9) !important;
+  color: rgba(0,0,0,0.9) !important;
+}
+.message-body p {
+  margin: 6px 0 !important;
+}
+
+.avatar-large {
+  width: 50px !important;
+  border-radius: 50% !important;
+}
+
+.messages .btn {
+  margin-top: 8px;
+}
