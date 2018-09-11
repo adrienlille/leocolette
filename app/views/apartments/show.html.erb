@@ -1,44 +1,38 @@
 
 
-<% if policy(@booking).create? %>
-  <div>
-    <%= simple_form_for [@apartment, @booking] do |f| %>
-      <%= f.input :start_date, as: :date %>
-      <%= f.input :end_date, as: :date %>
-      <%= f.button :submit, class: "btn btn-primary"  %>
-    <% end %>
-  </div>
-<% end %>
+
 
 <!-- LISTINGS DETAILS TITLE SECTION -->
 <section class="clearfix paddingAdjustBottom">
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <!-- LISTINGS DETAILS IMAGE SECTION -->
-        <div class="clearfix paddingAdjustTopBottom">
-          <ul class="">
-            <li><img src="<%= @apartment.photo %>" alt="Image Listing" class="img-responsive"></li>
-          </ul>
+    <div class="wrapper">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <!-- LISTINGS DETAILS IMAGE SECTION -->
+          <div class="clearfix paddingAdjustTopBottom">
+            <ul class="">
+              <li><img src="<%= @apartment.photo %>" alt="Image Listing" class="img-responsive"></li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-8">
-        <div class="listingTitleArea">
-          <h2><%= @apartment.name %></h2>
-          <p><%= @apartment.description %></p>
-          <div class="listingReview">
-            <ul class="list-inline rating">
-              <%= raw(@apartment.stars) %>
-            </ul>
-            <span>( <%= @apartment.reviews.count %> Reviews )</span>
-            <ul class="list-inline captionItem">
-              <li><i class="fa fa-heart-o" aria-hidden="true"></i> 10 k</li>
-            </ul>
-            <% if policy(@apartment).edit? %>
-              <%= link_to "Edit apartment info", edit_apartment_path(@apartment), class: "btn btn-primary" %>
-            <% else %>
-              <a href="#reviews" class="btn btn-primary">Write a review</a>
-            <% end %>
+        <div class="col-xs-12 col-sm-8">
+          <div class="listingTitleArea">
+            <h2><%= @apartment.name %></h2>
+            <p><%= @apartment.description %></p>
+            <div class="listingReview">
+              <ul class="list-inline rating">
+                <%= raw(@apartment.stars) %>
+              </ul>
+              <span>( <%= @apartment.reviews.count %> Reviews )</span>
+              <ul class="list-inline captionItem">
+                <li><i class="fa fa-heart-o" aria-hidden="true"></i> 10 k</li>
+              </ul>
+              <% if policy(@apartment).edit? %>
+                <%= link_to "Edit apartment info", edit_apartment_path(@apartment), class: "btn btn-primary" %>
+              <% else %>
+                <a href="#reviews" class="btn btn-primary">Write a review</a>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
@@ -71,8 +65,20 @@
             </ul>
           </div>
         </div>
-
+        <div class="listSidebar">
+          <h3>Ask for a stay</h3>
+          <% if policy(@booking).create? %>
+            <div>
+              <%= simple_form_for [@apartment, @booking] do |f| %>
+                <%= f.input :start_date, as: :date %>
+                <%= f.input :end_date, as: :date %>
+                <%= f.button :submit, class: "btn btn-primary"  %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
       </div>
+
       <div class="col-sm-8 col-xs-12">
         <div class="listDetailsInfo">
           <div class="detailsInfoBox" id="reviews">
