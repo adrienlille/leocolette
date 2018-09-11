@@ -1,0 +1,16 @@
+<div class="media media-comment">
+  <div class="media-left">
+  <%= cl_image_tag(review.user.profile.photo, class: "media-object img-circle", width: 80, height: 80, gravity: :face, crop: :fill) %>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= review.user.profile.first_name %></h4>
+    <ul class="list-inline rating">
+      <li><i class="fa fa-star" aria-hidden="true"></i></li>
+      <li><i class="fa fa-star" aria-hidden="true"></i></li>
+      <li><i class="fa fa-star" aria-hidden="true"></i></li>
+      <li><i class="fa fa-star" aria-hidden="true"></i></li>
+      <li><i class="fa fa-star" aria-hidden="true"></i></li>
+    </ul>
+    <p><%= review.text %></p>
+  </div>
+</div>

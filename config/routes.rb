@@ -18,6 +18,7 @@ Rails.application.routes.draw do
         get 'mine', to: "apartments#mine"  # RestaurantsController#mine
     end
     resource :bookings, only: [:create, :new, :show, :update]
+    resources :reviews
   end
 
   resources :bookings, only: [:index, :update]
@@ -25,5 +26,7 @@ Rails.application.routes.draw do
   resources :conversations do
     resources :messages
   end
+
+
 
 end

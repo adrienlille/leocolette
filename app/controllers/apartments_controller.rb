@@ -12,6 +12,7 @@ class ApartmentsController < ApplicationController
   def show          # GET /apartments/:id
     find_apartment
     @booking = Booking.new
+    @review = Review.new(apartment: Apartment.find(params[:id]))
   end
 
   def new           # GET /apartments/new

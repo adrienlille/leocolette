@@ -1,4 +1,5 @@
 
+
 <% if policy(@booking).create? %>
   <div>
     <%= simple_form_for [@apartment, @booking] do |f| %>
@@ -83,63 +84,15 @@
             <p><%= @apartment.rules %></p>
           </div>
           <div class="detailsInfoBox">
-            <h3>Reviews (3)</h3>
-            <div class="media media-comment">
-              <div class="media-left">
-              <img src="img/listing/list-user-1.jpg" class="media-object img-circle" alt="Image User">
-              </div>
-              <div class="media-body">
-                <h4 class="media-heading">Jessica Brown</h4>
-                <ul class="list-inline rating">
-                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                </ul>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan
-                totam rem ape riam,</p>
-              </div>
-            </div>
-            <div class="media media-comment">
-              <div class="media-left">
-              <img src="img/listing/list-user-2.jpg" class="media-object img-circle" alt="Image User">
-              </div>
-              <div class="media-body">
-                <h4 class="media-heading">Jessica Brown</h4>
-                <ul class="list-inline rating">
-                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                  <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                </ul>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan
-                totam rem ape riam,</p>
-              </div>
-            </div>
-            <div class="media media-comment">
-              <div class="media-left">
-              <img src="img/listing/list-user-3.jpg" class="media-object img-circle" alt="Image User">
-              </div>
-              <div class="media-body">
-                <h4 class="media-heading">Jessica Brown</h4>
-                <ul class="list-inline rating">
-                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                  <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                  <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                </ul>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan
-                totam rem ape riam,</p>
-              </div>
-            </div>
+            <h3>Reviews (<%= @apartment.reviews.count %>)</h3>
+            <% @apartment&.reviews.each do |review| %>
+              <%= render 'review', review: review %>
+            <% end %>
           </div>
           <div class="detailsInfoBox">
             <h3>Write A Review </h3>
             <div class="listingReview">
-              <span>( 5 Reviews )</span>
+              <span>( <%= @apartment.reviews.count %> Reviews)</span>
               <ul class="list-inline rating rating-review">
                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -148,16 +101,20 @@
                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
               </ul>
             </div>
-            <form action="#">
-              <div class="formSection formSpace">
-                <div class="form-group">
-                  <textarea class="form-control" rows="3" placeholder="Comment"></textarea>
+            <% if policy(@review).create? %>
+              <%= simple_form_for [@apartment, @review] do |f| %>
+
+                <div class="formSection formSpace">
+                  <div class="form-group">
+                    <%= f.text_area :text, class: "form-control", rows: "3" %>
+                  </div>
+                  <div class="form-group mb0">
+                    <%= f.submit "Send Review", class: "btn btn-primary" %>
+                  </div>
                 </div>
-                <div class="form-group mb0">
-                  <button type="submit" class="btn btn-primary">Send Review</button>
-                </div>
-              </div>
-            </form>
+                <% end %>
+                <% end %>
+
           </div>
         </div>
       </div>
