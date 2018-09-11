@@ -2,9 +2,6 @@
   <%= link_to "Edit apartment info", edit_apartment_path(@apartment), class: "btn btn-primary" %>
 <% end %>
 
-<h2><%= @apartment.name %></h2>
-<p><%= @apartment.street %></p>
-
 <% if policy(@booking).create? %>
   <div>
     <%= simple_form_for [@apartment, @booking] do |f| %>
@@ -15,5 +12,154 @@
   </div>
 <% end %>
 
-<%= @apartment.user %>
-<%= link_to "Message me!", conversations_path(user1_id: current_user.id, user2_id: @apartment.user.id, apartment_id: @apartment.id), method: "post" %>
+<!-- LISTINGS DETAILS TITLE SECTION -->
+<section class="clearfix paddingAdjustBottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <!-- LISTINGS DETAILS IMAGE SECTION -->
+        <div class="clearfix paddingAdjustTopBottom">
+          <ul class="">
+            <li><img src="<%= @apartment.photo %>" alt="Image Listing" class="img-responsive"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-8">
+        <div class="listingTitleArea">
+          <h2><%= @apartment.name %></h2>
+          <p><%= @apartment.description %></p>
+          <div class="listingReview">
+            <ul class="list-inline rating">
+              <li><i class="fa fa-star" aria-hidden="true"></i></li>
+              <li><i class="fa fa-star" aria-hidden="true"></i></li>
+              <li><i class="fa fa-star" aria-hidden="true"></i></li>
+              <li><i class="fa fa-star" aria-hidden="true"></i></li>
+              <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+            </ul>
+            <span>( 5 Reviews )</span>
+            <ul class="list-inline captionItem">
+              <li><i class="fa fa-heart-o" aria-hidden="true"></i> 10 k</li>
+            </ul>
+            <a href="#reviews" class="btn btn-primary">Write a review</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- LISTINGS DETAILS INFO SECTION -->
+<section class="clearfix paddingAdjustTop">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-xs-12">
+        <div class="clearfix map-sidebar map-right">
+          <!--<div id="map" style="position:relative; margin: 0;padding: 0;height: 538px; max-width: none;"></div> -->
+        </div>
+        <div class="listSidebar owner-details">
+          <h3>The Owner</h3>
+          <div class="contactInfo">
+            <ul class="list-unstyled list-address">
+              <li>
+                <%= cl_image_tag(@apartment.user.profile.photo, width: 100, height: 100, crop: :fill) %>
+              </li>
+              <li>
+                <%= @apartment.user.profile.first_name %>
+              </li>
+              <li>
+              <%= link_to "Message me!", conversations_path(user1_id: current_user.id, user2_id: @apartment.user.id, apartment_id: @apartment.id), method: "post", class: "btn btn-primary" %>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-sm-8 col-xs-12">
+        <div class="listDetailsInfo">
+          <div class="detailsInfoBox" id="reviews">
+            <h3>Rules and Expectations of the owner</h3>
+            <p><%= @apartment.rules %></p>
+          </div>
+          <div class="detailsInfoBox">
+            <h3>Reviews (3)</h3>
+            <div class="media media-comment">
+              <div class="media-left">
+              <img src="img/listing/list-user-1.jpg" class="media-object img-circle" alt="Image User">
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Jessica Brown</h4>
+                <ul class="list-inline rating">
+                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                </ul>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan
+                totam rem ape riam,</p>
+              </div>
+            </div>
+            <div class="media media-comment">
+              <div class="media-left">
+              <img src="img/listing/list-user-2.jpg" class="media-object img-circle" alt="Image User">
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Jessica Brown</h4>
+                <ul class="list-inline rating">
+                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                  <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                </ul>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan
+                totam rem ape riam,</p>
+              </div>
+            </div>
+            <div class="media media-comment">
+              <div class="media-left">
+              <img src="img/listing/list-user-3.jpg" class="media-object img-circle" alt="Image User">
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Jessica Brown</h4>
+                <ul class="list-inline rating">
+                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                  <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                  <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                  <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                </ul>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan
+                totam rem ape riam,</p>
+              </div>
+            </div>
+          </div>
+          <div class="detailsInfoBox">
+            <h3>Write A Review </h3>
+            <div class="listingReview">
+              <span>( 5 Reviews )</span>
+              <ul class="list-inline rating rating-review">
+                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+              </ul>
+            </div>
+            <form action="#">
+              <div class="formSection formSpace">
+                <div class="form-group">
+                  <textarea class="form-control" rows="3" placeholder="Comment"></textarea>
+                </div>
+                <div class="form-group mb0">
+                  <button type="submit" class="btn btn-primary">Send Review</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
