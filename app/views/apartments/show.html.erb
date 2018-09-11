@@ -1,6 +1,3 @@
-<% if policy(@apartment).edit? %>
-  <%= link_to "Edit apartment info", edit_apartment_path(@apartment), class: "btn btn-primary" %>
-<% end %>
 
 <% if policy(@booking).create? %>
   <div>
@@ -40,7 +37,11 @@
             <ul class="list-inline captionItem">
               <li><i class="fa fa-heart-o" aria-hidden="true"></i> 10 k</li>
             </ul>
-            <a href="#reviews" class="btn btn-primary">Write a review</a>
+            <% if policy(@apartment).edit? %>
+              <%= link_to "Edit apartment info", edit_apartment_path(@apartment), class: "btn btn-primary" %>
+            <% else %>
+              <a href="#reviews" class="btn btn-primary">Write a review</a>
+            <% end %>
           </div>
         </div>
       </div>
