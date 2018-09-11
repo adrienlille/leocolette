@@ -28,13 +28,9 @@
           <p><%= @apartment.description %></p>
           <div class="listingReview">
             <ul class="list-inline rating">
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+              <%= raw(@apartment.stars) %>
             </ul>
-            <span>( 5 Reviews )</span>
+            <span>( <%= @apartment.reviews.count %> Reviews )</span>
             <ul class="list-inline captionItem">
               <li><i class="fa fa-heart-o" aria-hidden="true"></i> 10 k</li>
             </ul>
@@ -94,17 +90,25 @@
             <div class="listingReview">
               <span>( <%= @apartment.reviews.count %> Reviews)</span>
               <ul class="list-inline rating rating-review">
-                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                <%= raw(@apartment.stars) %>
               </ul>
             </div>
             <% if policy(@review).create? %>
               <%= simple_form_for [@apartment, @review] do |f| %>
 
                 <div class="formSection formSpace">
+                  <div class="form-group">
+                    <%= f.radio_button :score, "1"%>
+                    <%= f.label :score_1, "1" %>
+                    <%= f.radio_button :score, "2"%>
+                    <%= f.label :score_2, "2" %>
+                    <%= f.radio_button :score, "3"%>
+                    <%= f.label :score_3, "3" %>
+                    <%= f.radio_button :score, "4"%>
+                    <%= f.label :score_4, "4" %>
+                    <%= f.radio_button :score, "5"%>
+                    <%= f.label :score_5, "5" %>
+                  </div>
                   <div class="form-group">
                     <%= f.text_area :text, class: "form-control", rows: "3" %>
                   </div>

@@ -5,11 +5,15 @@
   <div class="media-body">
     <h4 class="media-heading"><%= review.user.profile.first_name %></h4>
     <ul class="list-inline rating">
-      <li><i class="fa fa-star" aria-hidden="true"></i></li>
-      <li><i class="fa fa-star" aria-hidden="true"></i></li>
-      <li><i class="fa fa-star" aria-hidden="true"></i></li>
-      <li><i class="fa fa-star" aria-hidden="true"></i></li>
-      <li><i class="fa fa-star" aria-hidden="true"></i></li>
+      <% review&.score&.times do %>
+        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+      <% end %>
+      <% if review.score %>
+        <% n = 5 - review.score%>
+        <% n.times do %>
+          <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+        <% end %>
+      <% end %>
     </ul>
     <p><%= review.text %></p>
   </div>
