@@ -62,7 +62,7 @@
           <div class="contactInfo">
             <ul class="list-unstyled list-address">
               <li>
-                <%= cl_image_tag(@apartment.user.profile.photo, width: 100, height: 100, crop: :fill) %>
+                <%= cl_image_tag(@apartment.user.profile.photo, width: 165, height: 165, gravity: :face, crop: :fill) %>
               </li>
               <li>
                 <%= @apartment.user.profile.first_name %>

@@ -9952,3 +9952,7 @@ body.pattern-04 {
 .owner-details a {
   color:  #FFFFFF !important;
 }
+
+.owner-details li {
+  font-size: 20px; !important;
+}
