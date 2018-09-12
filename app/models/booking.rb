@@ -2,6 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :apartment
   belongs_to :user
   monetize :price_cents
+  has_one :order
 
   validates :status, inclusion: { in: %w(pending canceled approved) }
 
