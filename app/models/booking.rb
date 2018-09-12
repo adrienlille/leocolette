@@ -14,4 +14,8 @@ class Booking < ApplicationRecord
       return '<span class="label label-success">Approved</span>'
     end
   end
+
+  def days
+    self.end_date - self.start_date
+  end
 end
