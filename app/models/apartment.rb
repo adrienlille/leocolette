@@ -9,13 +9,17 @@ class Apartment < ApplicationRecord
   end
 
   def score
-    self.reviews.average(:score).round
+    self&.reviews&.average(:score)&.round
   end
 
   def stars
-    stars = ''
-    stars << '<li><i class="fa fa-star" aria-hidden="true"></i></li>' * self.score
-    stars << '<li><i class="fa fa-star-o" aria-hidden="true"></i></li>' * (5 - self.score)
-    return stars
+    if self.score
+      stars = ''
+      stars << '<li><i class="fa fa-star" aria-hidden="true"></i></li>' * self&.score
+      stars << '<li><i class="fa fa-star-o" aria-hidden="true"></i></li>' * (5 - self&.score)
+      return stars
+    else
+      return ''
+    end
   end
 end

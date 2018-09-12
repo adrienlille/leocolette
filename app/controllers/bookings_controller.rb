@@ -43,6 +43,6 @@ class BookingsController < ApplicationController
 
   def period_available?(period, apartment)
     apartment = Apartment.find(apartment.id)
-    !apartment.bookings.find { |booking| dates_overlap?(period, [booking.start_date, booking.end_date]) }
+    !apartment.bookings.where(status: 'approved').find { |booking| dates_overlap?(period, [booking.start_date, booking.end_date]) }
   end
 end

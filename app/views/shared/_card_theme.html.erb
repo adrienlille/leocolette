@@ -6,11 +6,7 @@
         <%= cl_image_tag(apartment.photo, width: 370, height: 250, crop: :fill) %>
         <div class="thingsMask">
           <ul class="list-inline rating">
-            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+            <%= raw(apartment.stars) %>
           </ul>
           <h2><%= apartment.name %></h2>
           <p><%= apartment.description %></p>
