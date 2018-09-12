@@ -48,6 +48,7 @@ gem 'font-awesome-rails'
 gem 'ruby-nodejs'
 #gem 'jquery-rails'
 #gem 'jquery-ui-rails'
+gem 'money-rails'
 
 group :production do
   gem 'pg'

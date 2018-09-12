@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180911143915) do
+ActiveRecord::Schema.define(version: 20180912093647) do
 
   create_table "apartments", force: :cascade do |t|
     t.string "name"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20180911143915) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
     t.index ["apartment_id"], name: "index_bookings_on_apartment_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
