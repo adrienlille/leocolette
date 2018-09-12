@@ -49,6 +49,7 @@ gem 'ruby-nodejs'
 #gem 'jquery-rails'
 #gem 'jquery-ui-rails'
 gem 'money-rails'
+gem 'stripe'
 
 group :production do
   gem 'pg'
