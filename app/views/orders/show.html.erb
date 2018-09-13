@@ -9,6 +9,7 @@
         <div class="priceInfo">
           <%= cl_image_tag(@order.booking.apartment.photo, width: 300, height: 200, gravity: :face, crop: :fill, style: "text-align: center") %>
           <ul class="list-unstyled">
+            <li>Receipt #: <%= @order.id %></li>
             <li>Starting: <%= @order.booking.startdate %></li>
             <li>Until: <%= @order.booking.enddate %></li>
             <li>Total: <%= @order.booking.days %> nights</li>

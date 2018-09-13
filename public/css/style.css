@@ -460,7 +460,7 @@ section {
   font-weight: 500;
   border: none;
   text-transform: uppercase;
-  background-color: transparent;
+  /*background-color: transparent;*/
   border-radius: 4px;
   letter-spacing: 1px;
 }
@@ -10037,4 +10037,8 @@ body.pattern-04 {
 
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
+}
+
+.btn {
+  visibility: visible !important;
 }

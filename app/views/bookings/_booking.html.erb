@@ -3,11 +3,15 @@
     <ul class="list-inline listingsInfo">
       <li><a href="#"><img src="<%= booking.apartment.photo %>" alt="Image Listings"></a></li>
       <li>
-        <h3><%= booking.apartment.name %> <i class="fa fa-check-circle" aria-hidden="true"></i></h3>
-        <h5>1569 Queen Street West <span class="cityName">Toronto</span></h5>
+        <h3><%= booking.apartment.name %></h3>
+        <h5><span class="cityName"><%= booking.apartment.name %></span></h5>
         <%= form_tag orders_path do %>
           <%= hidden_field_tag 'booking_id', booking.id %>
-          <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+          <% if booking&.order&.state == 'paid'%>
+            <%= submit_tag 'Paid: view receipt', class: 'btn btn-success' %>
+          <% else %>
+            <%= submit_tag 'Unpaid: proceed to payment', class: 'btn btn-warning' %>
+          <% end %>
         <% end %>
       </li>
     </ul>
