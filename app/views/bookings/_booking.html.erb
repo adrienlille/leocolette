@@ -5,13 +5,17 @@
       <li>
         <h3><%= booking.apartment.name %></h3>
         <h5><span class="cityName"><%= booking.apartment.name %></span></h5>
-        <%= form_tag orders_path do %>
-          <%= hidden_field_tag 'booking_id', booking.id %>
-          <% if booking&.order&.state == 'paid'%>
-            <%= submit_tag 'Paid: view receipt', class: 'btn btn-success' %>
-          <% else %>
-            <%= submit_tag 'Unpaid: proceed to payment', class: 'btn btn-warning' %>
+        <% if current_user.student? %>
+          <%= form_tag orders_path do %>
+            <%= hidden_field_tag 'booking_id', booking.id %>
+            <% if booking&.order&.state == 'paid'%>
+              <%= submit_tag 'Paid: view receipt', class: 'btn btn-success' %>
+            <% else %>
+              <%= submit_tag 'Unpaid: proceed to payment', class: 'btn btn-warning' %>
+            <% end %>
           <% end %>
+        <% else %>
+          <%= raw(booking&.order&.status_tag) %>
         <% end %>
       </li>
     </ul>

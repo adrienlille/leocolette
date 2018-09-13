@@ -9,4 +9,8 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :orders
 
+  def student?
+    self.profile.account_type == "1"
+  end
+
 end
