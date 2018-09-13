@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
   end
 
   def index
-    authorize @bookings = policy_scope(Booking)
+    authorize @bookings = policy_scope(Booking).order(created_at: :desc)
   end
 
   def update

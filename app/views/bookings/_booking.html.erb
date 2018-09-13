@@ -21,7 +21,7 @@
   <td class="user"><%= link_to profile_path(user.profile) do %>
   <%= cl_image_tag user.profile.photo, width: 100, height: 100, gravity: :face, crop: :fill %><%= user.profile.first_name %><% end %></td>
   <td><%= link_to "send message", conversations_path(user1_id: booking.apartment.user.id, user2_id: booking.user.id, apartment_id: booking.apartment_id), method: "post", class: "btn btn-primary" %></td>
-  <td><%= booking.start_date %></td>
-  <td><%= booking.end_date %></td>
+  <td><%= booking.startdate %></td>
+  <td><%= booking.enddate %></td>
   <td><%= raw(booking.status_tag) %></td>
 </tr>
