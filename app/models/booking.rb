@@ -17,6 +17,6 @@ class Booking < ApplicationRecord
   end
 
   def days
-    self.end_date - self.start_date
+    (self.end_date - self.start_date).round
   end
 end
