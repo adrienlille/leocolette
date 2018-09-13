@@ -30,6 +30,7 @@
 
                   <li><%= link_to "Host", new_apartment_path if (current_user.profile and current_user.profile.account_type == 2) %></li>
                   <li><%= link_to "Accomodations", apartments_path  %></li>
+                  <li><%= link_to "My Bookings", bookings_path  %></li>
                   <li><%= link_to "My Profile", profile_path(current_user.profile) if current_user.profile %></li>
                   <li><%= link_to "Messages", conversations_path %></li>
                   <li><%= link_to "About", "#" %></li>
