@@ -1,7 +1,21 @@
-<!-- app/views/orders/show.html.erb -->
-<h1>Order</h1>
-<ul>
-  <li>Status: <%= @order.state %></li>
-  <li>Item: <%= @order.apartment_sku %></li>
-  <li>Amount: <%= humanized_money_with_symbol(@order.amount) %></li>
-<ul>
+<div class="col-sm-4 col-sm-offset-4 col-xs-12">
+      <div class="priceTableWrapper advancedSupport active">
+        <div class="priceTableTitle">
+          <h2>Booking Confirmation</h2>
+        </div>
+        <div class="priceAmount">
+          <h2>Paid: <%= @order.amount %><small>€</small></h2>
+        </div>
+        <div class="priceInfo">
+          <%= cl_image_tag(@order.booking.apartment.photo, width: 300, height: 200, gravity: :face, crop: :fill, style: "text-align: center") %>
+          <ul class="list-unstyled">
+            <li>Starting: <%= @order.booking.startdate %></li>
+            <li>Until: <%= @order.booking.enddate %></li>
+            <li>Total: <%= @order.booking.days %> nights</li>
+          </ul>
+          <div class="priceBtn">
+            <a href="<%= apartment_path(@order.booking.apartment) %>" class="btn btn-primary">View Accomodation</a>
+          </div>
+        </div>
+      </div>
+    </div>

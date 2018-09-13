@@ -19,4 +19,12 @@ class Booking < ApplicationRecord
   def days
     (self.end_date - self.start_date).round
   end
+
+  def startdate
+    start_date.strftime("%d/%m/%y")
+  end
+
+  def enddate
+    end_date.strftime("%d/%m/%y")
+  end
 end

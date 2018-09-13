@@ -8,7 +8,7 @@ class Message < ApplicationRecord
  end
 
  def date
-  created_at.strftime("%m/%d/%y")
+  created_at.strftime("%d/%m/%y")
  end
 
  def time
