@@ -35,6 +35,7 @@ gem 'devise'
 gem 'pundit'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass' # Bootstrap v3
+# gem 'bootstrap'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'pry-rails', group: [:development, :test]
