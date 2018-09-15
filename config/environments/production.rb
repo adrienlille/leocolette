@@ -88,11 +88,4 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  ##AJOUTE PAR MOI (TEST)
-    config.assets.debug = true
-
-  # Suppress logger output for asset requests.
-  config.assets.quiet = true
-
 end
