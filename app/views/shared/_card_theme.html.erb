@@ -1,26 +1,25 @@
 
-<div class="col-sm-4 col-xs-12">
-  <div class="thingsBox thinsSpace">
-    <a href="<%= apartment_path(apartment) %>" class="card-link">
-      <div class="thingsImage">
-        <%= cl_image_tag(apartment.photo, width: 370, height: 250, crop: :fill) %>
-        <div class="thingsMask">
-          <ul class="list-inline rating">
-            <%= raw(apartment.stars) %>
-          </ul>
-          <h2><%= apartment.name %></h2>
-          <p><%= apartment.description %></p>
-        </div>
-      </div>
-    </a>
-    <a href="<%= profile_path(apartment.user.profile) %>">
-      <div class="thingsCaption ">
-        <ul class="list-inline captionItem">
-          <li><i class="fa fa-heart-o" aria-hidden="true"></i> 5k</li>
-          <li class="user-name-card"><%= apartment.user.profile.first_name %></li>
+<div class="thingsBox thinsSpace">
+  <a href="<%= apartment_path(apartment) %>" class="card-link">
+    <div class="thingsImage">
+      <%= cl_image_tag(apartment.photo, width: 370, height: 250, crop: :fill) %>
+      <div class="thingsMask">
+        <ul class="list-inline rating">
+          <%= raw(apartment.stars) %>
         </ul>
-        <%= cl_image_tag(apartment.user.profile.photo, class: "card-user", width: 50, height: 50, crop: :fill) %>
+        <h2><%= apartment.name %></h2>
+        <p><%= apartment.description %></p>
       </div>
-    </a>
-  </div>
+    </div>
+  </a>
+  <a href="<%= profile_path(apartment.user.profile) %>">
+    <div class="thingsCaption ">
+      <ul class="list-inline captionItem">
+        <li><i class="fa fa-heart-o" aria-hidden="true"></i> 5k</li>
+        <li class="user-name-card"><%= apartment.user.profile.first_name %></li>
+      </ul>
+      <%= cl_image_tag(apartment.user.profile.photo, class: "card-user", width: 50, height: 50, crop: :fill) %>
+    </div>
+  </a>
 </div>
+
