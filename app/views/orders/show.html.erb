@@ -22,29 +22,30 @@
     </div>
   </div>
 
-<% if @trip%>
-  <div class="col-sm-4 col-xs-12 col-sm-offset-1" style="border-color: #00BB9E">
-    <div class="priceTableWrapper advancedSupport active" style="border-color: #00BB9E" >
-      <div class="priceTableTitle">
-        <%= image_tag 'blablacar.png' %>
-        <span><br />Cheapest deal for your departure date:</span>
-      </div>
-      <div class="priceAmount blablacar" style="background-color: #00BB9E">
-        <h2><%= @trip['price_with_commission']['value']%><small>EUR</small></h2>
-      </div>
-      <div class="priceInfo">
-        <ul class="list-unstyled">
-          <li>From: <%= @trip['departure_place']['city_name']%></li>
-          <li>To: <%= @trip['arrival_place']['city_name']%></li>
-          <li>Pickup address: <%= @trip['departure_place']['address']%></li>
-          <li>Drop address: <%= @trip['arrival_place']['address']%></li>
-        </ul>
-        <div class="priceBtn">
-          <a href="<%= @trip['links']['_front'] %>" class="btn btn-primary blablacar"  style="background-color: #00BB9E; border-color: #00BB9E">Book trip on Blablacar !</a>
+  <% if @trip %>
+    <div class="col-sm-4 col-xs-12 col-sm-offset-1" style="border-color: #00BB9E">
+      <div class="priceTableWrapper advancedSupport active" style="border-color: #00BB9E" >
+        <div class="priceTableTitle">
+          <%= image_tag 'blablacar.png' %>
+          <span><br />Cheapest deal for your departure date:</span>
+        </div>
+        <div class="priceAmount blablacar" style="background-color: #00BB9E">
+          <h2><%= @trip['price_with_commission']['value']%><small>EUR</small></h2>
+        </div>
+        <div class="priceInfo">
+          <ul class="list-unstyled">
+            <li>From: <%= @trip['departure_place']['city_name']%></li>
+            <li>To: <%= @trip['arrival_place']['city_name']%></li>
+            <li>Pickup address: <%= @trip['departure_place']['address']%></li>
+            <li>Drop address: <%= @trip['arrival_place']['address']%></li>
+          </ul>
+          <div class="priceBtn">
+            <a href="<%= @trip['links']['_front'] %>" class="btn btn-primary blablacar"  style="background-color: #00BB9E; border-color: #00BB9E">Book trip on Blablacar !</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  <% end%>
 </div>
 
 
