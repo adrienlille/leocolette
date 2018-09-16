@@ -3,6 +3,11 @@ class BookingsController < ApplicationController
     authorize @booking = Booking.new(safe_params)
     @booking.user = current_user
     apartment = Apartment.find(params[:apartment_id])
+    if not current_user.profile.city && current_user.profile.photo && current_user.profile.about_me
+      flash[:alert] = "You must complete all fields of your profile before booking an accomodation."
+      redirect_to apartment_path(apartment)
+      return
+    end
     if !chronological?(@booking.start_date, @booking.end_date)
       flash[:alert] = "Starting date cannot be posterior to ending date."
     elsif period_available?([@booking.start_date, @booking.end_date], apartment)

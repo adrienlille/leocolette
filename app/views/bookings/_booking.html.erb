@@ -1,7 +1,7 @@
 <tr class="rowItem">
   <td>
     <ul class="list-inline listingsInfo">
-      <li><a href="#"><img src="<%= booking.apartment.photo %>" alt="Image Listings"></a></li>
+      <li><a href="<%= apartment_path(booking.apartment)%>"><img src="<%= booking.apartment.photo %>" alt="Image Listings"></a></li>
       <li>
         <h3><%= booking.apartment.name %></h3>
         <h5><span class="cityName"><%= booking.apartment.name %></span></h5>
