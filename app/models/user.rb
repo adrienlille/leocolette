@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :orders
 
   def student?
-    self.profile.account_type == "1"
+    self.profile.account_type == 1
   end
 
 end
