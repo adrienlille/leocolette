@@ -22,8 +22,7 @@ class OrdersController < ApplicationController
 
     if booking.apartment.city != current_user.profile.city
       key = "525ecc9ded3b4ee7b86531fa4c7be047"
-      url= "https://public-api.blablacar.com/api/v2/trips?key=525ecc9ded3b4ee7b86531fa4c7be047&locale=fr_FR" + "&fn=" + current_user.profile.city + "&tn=" + booking.apartment.city
-
+      url= "https://public-api.blablacar.com/api/v2/trips?key=525ecc9ded3b4ee7b86531fa4c7be047&locale=fr_FR" + "&fn=" + current_user.profile.city + "&tn=" + booking.apartment.city + "&db=" + booking.start_date.to_s
       serialized = open(url).read
       json = JSON.parse(serialized)
       cheapest = json['trips'][0]
