@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
     @order = current_user.orders.where(state: 'paid').find(params[:id])
     booking = @order.booking
 
-    if booking.city != current_user.city
+    if booking.apartment.city != current_user.city
       key = "525ecc9ded3b4ee7b86531fa4c7be047"
       url= "https://public-api.blablacar.com/api/v2/trips?key=525ecc9ded3b4ee7b86531fa4c7be047&locale=fr_FR" + "&fn=" + current_user.profile.city + "&tn=" + booking.apartment.city
 
