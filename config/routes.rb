@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   get 'setaccount', to: 'profiles#setaccount', as: :setaccount
   post 'setaccount', to: 'profiles#saveaccounttype'
   get 'about', to: 'pages#about'
-  get 'api', to: 'pages#api'
+  get 'search', to: 'pages#search', as: :search
+
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
