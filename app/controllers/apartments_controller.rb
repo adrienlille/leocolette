@@ -53,6 +53,6 @@ def find_apartment
 end
 
 def user_params
-  params.require(:apartment).permit(:name, :description, :street, :city, :postal_code,
+  params.require(:apartment).permit(:name, :rules, :description, :street, :city, :postal_code,
     :bedrooms, :bathrooms, :photo)
 end
