@@ -2,6 +2,21 @@
  <%= link_to "Show Previous", "?m=all" %>
 <% end %>
 
+<table class="table listingsTable">
+  <td>
+    <ul class="list-inline listingsInfo">
+      <li><a href="#"><img src="<%= @conversation.apartment.photo %>" alt="Image Listings"></a></li>
+      <li>
+        <h3><%= @conversation.apartment.name %></h3>
+        <h5><span class="cityName"><%= @conversation.apartment.city %></span></h5>
+      </li>
+    </ul>
+      <div class="right-btn" style="margin-top: 42px">
+        <%= link_to "Go to booking dashboard", bookings_path, class: "btn btn-primary" %>
+      </div>
+  </td>
+</table>
+
 <div class="container">
   <div class="wrapper messages">
     <% @messages.each do |message| %>
