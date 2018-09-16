@@ -5,7 +5,7 @@
       <li>
         <h3><%= booking.apartment.name %></h3>
         <h5><span class="cityName"><%= booking.apartment.name %></span></h5>
-        <% if current_user.student? %>
+        <% if current_user.student? && booking.status == 'approved' %>
           <%= form_tag orders_path do %>
             <%= hidden_field_tag 'booking_id', booking.id %>
             <% if booking&.order&.state == 'paid'%>
@@ -15,7 +15,7 @@
             <% end %>
           <% end %>
         <% else %>
-          <%= raw(booking&.order&.status_tag) %>
+          You will be able to pay once the owner has approved your booking.
         <% end %>
       </li>
     </ul>

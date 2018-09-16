@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
       return
     elsif  booking.order
       order = booking.order
-    else
+    elsif booking.status == "approved"
       order = Order.create!(apartment_sku: booking.id, booking: booking, amount: (booking.days * 6).round, state: 'pending', user: current_user)
     end
     redirect_to new_order_payment_path(order.id)
