@@ -11,6 +11,10 @@ class PagesController < ApplicationController
   def about
   end
 
+  def search
+    @apartments = Apartment.all.where(city: params[:city])
+  end
+
   private
 
   def account_type_is_set?

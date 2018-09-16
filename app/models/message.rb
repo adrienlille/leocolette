@@ -14,4 +14,12 @@ class Message < ApplicationRecord
  def time
   created_at.strftime("%l:%M %p")
  end
+
+ def readclass
+  if self.read == true
+    return 'oldMessage'
+  else
+    return 'recentMessage'
+  end
+ end
 end

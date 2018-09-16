@@ -1,6 +1,10 @@
 class ConversationsController < ApplicationController
   def index
     @conversations = policy_scope(Conversation)
+    @unread = 0
+    @conversations.each do |conv|
+      @unread += 1 if conv.messages.last.read == false
+    end
   end
 
   def create

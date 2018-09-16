@@ -1,0 +1,14 @@
+<section class="clerfix categoryGrid">
+  <div class="container">
+     <% if policy(@apartment).create? %>
+        <%= link_to "Put my accomodation online", new_apartment_path, :class => "btn btn-primary" %>
+      <% end %>
+    <div class="row" style="padding-top: 10px">
+      <div class="row">
+        <% @apartments.each do |apartment| %>
+          <%= render 'shared/card_theme', apartment: apartment %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
