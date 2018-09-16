@@ -47,7 +47,6 @@
   function resetchoices(){
     document.querySelectorAll(".interestContent").forEach((choicebox) => {
       choicebox.classList.remove("choice-selected");
-      console.log("ooo");
     });
   };
 
@@ -56,7 +55,6 @@
       resetchoices();
       event.currentTarget.classList.add("choice-selected");
       choicebox.querySelector("input").checked = true;
-      console.log("aa");
     });
   });
 </script>

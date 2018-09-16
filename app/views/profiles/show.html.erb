@@ -13,10 +13,8 @@
         <div class="col-xs-12 col-sm-8">
           <div class="user-profile-content">
             <h3 class="user-name"><%= @profile.first_name %></h3>
-            <span class="designation">Developer</span>
             <p><%= @profile.about_me %></p>
             <ul class="user-contact-details">
-              <li><i class="fa fa-phone" aria-hidden="true"></i><%= @profile.phone_number %></li>
             </ul>
           </div>
            <%= link_to "Edit my profile", edit_profiles_path, :class => "btn btn-default btn-primary" if @profile.id == current_user.profile.id%>
