@@ -14,8 +14,10 @@
               <%= submit_tag 'Unpaid: proceed to payment', class: 'btn btn-warning' %>
             <% end %>
           <% end %>
-        <% else %>
+        <% elsif current_user.student? %>
           You will be able to pay once the owner has approved your booking.
+        <% else %>
+          <%= raw(booking.order.status_tag) %>
         <% end %>
       </li>
     </ul>
