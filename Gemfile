@@ -52,6 +52,7 @@ gem 'ruby-nodejs'
 gem 'money-rails'
 gem 'stripe'
 
+
 group :production do
   gem 'pg'
 end

@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
   skip_after_action :verify_authorized
+  require 'json'
+  require 'open-uri'
 
   def create
     booking = Booking.find(params[:booking_id])
@@ -16,5 +18,18 @@ class OrdersController < ApplicationController
 
   def show
     @order = current_user.orders.where(state: 'paid').find(params[:id])
+    booking = @order.booking
+    key = "525ecc9ded3b4ee7b86531fa4c7be047"
+    url= "https://public-api.blablacar.com/api/v2/trips?key=525ecc9ded3b4ee7b86531fa4c7be047&locale=fr_FR" + "&fn=" + current_user.profile.city + "&tn=" + booking.apartment.city
+
+    serialized = open(url).read
+    json = JSON.parse(serialized)
+    cheapest = json['trips'][0]
+
+    json['trips'].each do |trip|
+      cheapest = trip if trip['price_with_commission']['value'].to_i < cheapest['price_with_commission']['value'].to_i
+    end
+
+    @trip = cheapest
   end
 end

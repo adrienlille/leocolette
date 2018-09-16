@@ -1,0 +1,18 @@
+<%
+require 'json'
+require 'open-uri'
+
+key = "525ecc9ded3b4ee7b86531fa4c7be047"
+url = "https://public-api.blablacar.com/api/v2/trips?key=525ecc9ded3b4ee7b86531fa4c7be047&locale=fr_FR&fn=paris&tn=toulouse"
+serialized = open(url).read
+json = JSON.parse(serialized)
+prices =[]
+cheapest = json['trips'][0]
+%>
+
+<% json['trips'].each do |trip|
+  cheapest = trip if trip['price_with_commission']['value'].to_i < cheapest['price_with_commission']['value'].to_i
+ end %>
+
+ <%= cheapest %>
+
